@@ -13,6 +13,7 @@
 		473E1EB1261E98810051D5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473E1EB0261E98810051D5BC /* Assets.xcassets */; };
 		473E1EB4261E98810051D5BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473E1EB3261E98810051D5BC /* Preview Assets.xcassets */; };
 		473E1EB7261E98810051D5BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473E1EB5261E98810051D5BC /* LaunchScreen.storyboard */; };
+		473E1EC0261E9AC30051D5BC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473E1EBF261E9AC20051D5BC /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		473E1EB3261E98810051D5BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		473E1EB6261E98810051D5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		473E1EB8261E98810051D5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		473E1EBF261E9AC20051D5BC /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = ../../../../Downloads/Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		473E1EA9261E98800051D5BC /* Paired */ = {
 			isa = PBXGroup;
 			children = (
+				473E1EBF261E9AC20051D5BC /* Card.swift */,
 				473E1EAA261E98800051D5BC /* AppDelegate.swift */,
 				473E1EAC261E98800051D5BC /* SceneDelegate.swift */,
 				473E1EAE261E98800051D5BC /* ContentView.swift */,
@@ -148,6 +151,7 @@
 				473E1EAB261E98800051D5BC /* AppDelegate.swift in Sources */,
 				473E1EAD261E98800051D5BC /* SceneDelegate.swift in Sources */,
 				473E1EAF261E98800051D5BC /* ContentView.swift in Sources */,
+				473E1EC0261E9AC30051D5BC /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
