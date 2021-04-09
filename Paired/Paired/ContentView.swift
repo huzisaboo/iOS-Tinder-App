@@ -43,7 +43,8 @@ struct ContentView: View {
             //Bottom Stack
             HStack(spacing: 0){
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+                Button(action: {})
+                {
                     Image("refresh_circle").resizable().aspectRatio(contentMode: .fit).frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
                 Button(action: {}){
