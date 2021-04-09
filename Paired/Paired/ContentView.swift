@@ -30,7 +30,11 @@ struct ContentView: View {
             }.padding(.horizontal)
             
             //Card
-            CardView()
+            ZStack {
+                ForEach(Card.data.reversed()) { card in
+                    CardView(card: card).padding(8)
+                }
+            }
             
             //Bottom Stack
             HStack(spacing: 0){
@@ -59,10 +63,11 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct CardView: View {
+    @State var card : Card
     let cardGradient = Gradient(colors: [Color.black.opacity(0),Color.black.opacity(0.5)])
     var body: some View {
         ZStack(alignment: .leading) {
-            Image("p0").resizable()
+            Image(card.imageName).resizable()
             LinearGradient(gradient: cardGradient, startPoint: .top, endPoint: .bottom)
             
             VStack{
@@ -70,12 +75,35 @@ struct CardView: View {
                 VStack(alignment:.leading)
                 {
                     HStack{
-                        Text("Username").font(.largeTitle).fontWeight(.bold).foregroundColor(Color.white).padding(.leading)
-                        Text("23").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(Color.white)
+                        Text(card.name).font(.largeTitle).fontWeight(.bold).foregroundColor(Color.white).padding(.leading)
+                        Text(String(card.age)).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(Color.white)
                     }
-                    Text("Hello World!").foregroundColor(Color.white).padding([.leading, .bottom])
+                    Text(card.bio).foregroundColor(Color.white).padding([.leading, .bottom])
                 }
             }
-        }
+        }.cornerRadius(10)
+        .offset(x: card.x, y: card.y)
+        .rotationEffect(.init(degrees: card.degree))
+        .gesture(
+        
+            DragGesture()
+            
+                .onChanged{ value in
+                    //User dragging the card
+                    withAnimation(.default)
+                    {
+                        card.x = value.translation.width
+                        card.y = value.translation.height
+                        card.degree = 7 * (value.translation.width > 0 ? 1 : -1)
+                        
+                    }
+                    
+                }
+            
+                .onEnded{ value in
+                    
+                }
+            
+        )
     }
 }
