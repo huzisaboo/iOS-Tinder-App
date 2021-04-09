@@ -30,7 +30,7 @@ struct ContentView: View {
             //Card
             ZStack {
                 VStack{
-                    Text("All cards over!").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.medium)
+                    Text("No More Suggestions!").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.medium)
                 }
                 
                 ForEach(Card.data.reversed()) { card in
