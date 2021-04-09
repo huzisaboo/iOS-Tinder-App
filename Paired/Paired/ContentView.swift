@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+   
     var body: some View {
         VStack{
             //Top Stack
@@ -28,8 +30,7 @@ struct ContentView: View {
             }.padding(.horizontal)
             
             //Card
-            //Image("p0")
-            RoundedRectangle(cornerRadius: 8.0)
+            CardView()
             
             //Bottom Stack
             HStack(spacing: 0){
@@ -54,5 +55,27 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct CardView: View {
+    let cardGradient = Gradient(colors: [Color.black.opacity(0),Color.black.opacity(0.5)])
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Image("p0").resizable()
+            LinearGradient(gradient: cardGradient, startPoint: .top, endPoint: .bottom)
+            
+            VStack{
+                Spacer()
+                VStack(alignment:.leading)
+                {
+                    HStack{
+                        Text("Username").font(.largeTitle).fontWeight(.bold).foregroundColor(Color.white).padding(.leading)
+                        Text("23").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(Color.white)
+                    }
+                    Text("Hello World!").foregroundColor(Color.white).padding([.leading, .bottom])
+                }
+            }
+        }
     }
 }
